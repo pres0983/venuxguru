@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import api from '../utils/api';
-import Navbar from '../components/Navbar';
+import Layout from '../components/Layout';
 
 export default function Withdraw() {
   const [address, setAddress] = useState('');
@@ -20,9 +20,8 @@ export default function Withdraw() {
   };
 
   return (
-    <>
-      <Navbar />
-      <div className="p-4 md:p-6 max-w-2xl mx-auto">
+    <Layout>
+      <div className="p-4">
         <div className="bg-card p-6 rounded-xl border border-gray-800">
           <h2 className="text-2xl font-bold text-primary mb-2">Withdraw</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -34,6 +33,6 @@ export default function Withdraw() {
           <p className="text-gray-500 text-xs mt-2">Min withdrawal: 10 USDT. Manual approval may take 24-48 hours.</p>
         </div>
       </div>
-    </>
+    </Layout>
   );
 }

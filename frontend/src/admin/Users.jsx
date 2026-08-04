@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar';
 
 export default function Users() {
   const [users, setUsers] = useState([]);
-  const token = localStorage.getItem('token');
   const basic = btoa('admin:VenuxAdmin2026!');
 
   useEffect(() => {
@@ -19,7 +18,7 @@ export default function Users() {
   return (
     <>
       <Navbar />
-      <div className="p-4 md:p-6 max-w-6xl mx-auto">
+      <div className="p-4 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold text-primary mb-4">Users</h2>
         <div className="bg-card rounded-xl border border-gray-800 overflow-x-auto">
           <table className="w-full text-sm">

@@ -35,7 +35,7 @@ export default function BotSettings() {
   return (
     <>
       <Navbar />
-      <div className="p-4 md:p-6 max-w-2xl mx-auto">
+      <div className="p-4 max-w-2xl mx-auto">
         <div className="bg-card p-6 rounded-xl border border-gray-800">
           <h2 className="text-2xl font-bold text-primary mb-4">Bot Settings</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">

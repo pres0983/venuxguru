@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../utils/api';
-import { FaUser, FaWallet, FaHistory, FaSignOutAlt, FaCog } from 'react-icons/fa';
+import { FaUser, FaWallet, FaHistory, FaSignOutAlt } from 'react-icons/fa';
 
 export default function Profile() {
   const [user, setUser] = useState(null);
@@ -47,22 +47,9 @@ export default function Profile() {
       </div>
 
       <div className="mt-4 space-y-2">
-        <button
-          onClick={() => navigate('/support')}
-          className="w-full bg-card p-4 rounded-xl border border-gray-800 text-left text-gray-300 hover:border-primary"
-        >
-          💬 Support
-        </button>
-        <button
-          onClick={() => navigate('/education')}
-          className="w-full bg-card p-4 rounded-xl border border-gray-800 text-left text-gray-300 hover:border-primary"
-        >
-          📚 Education
-        </button>
-        <button
-          onClick={logout}
-          className="w-full bg-red-500/10 p-4 rounded-xl border border-red-500/30 text-left text-red-400 hover:bg-red-500/20"
-        >
+        <button onClick={() => navigate('/support')} className="w-full bg-card p-4 rounded-xl border border-gray-800 text-left text-gray-300 hover:border-primary">💬 Support</button>
+        <button onClick={() => navigate('/education')} className="w-full bg-card p-4 rounded-xl border border-gray-800 text-left text-gray-300 hover:border-primary">📚 Education</button>
+        <button onClick={logout} className="w-full bg-red-500/10 p-4 rounded-xl border border-red-500/30 text-left text-red-400 hover:bg-red-500/20">
           <FaSignOutAlt className="inline mr-2" /> Logout
         </button>
       </div>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import api from '../utils/api';
-import { FaPlay, FaStop, FaChartLine } from 'react-icons/fa';
 
 export default function Trade() {
   const [user, setUser] = useState(null);

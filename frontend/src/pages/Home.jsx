@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import api from '../utils/api';
-import { FaWallet, FaPlus, FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import { FaPlus } from 'react-icons/fa';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 export default function Home() {
@@ -8,19 +8,15 @@ export default function Home() {
   const [price, setPrice] = useState('0.00');
   const [priceChange, setPriceChange] = useState('0.00');
   const [trades, setTrades] = useState([]);
-  const [notifications, setNotifications] = useState([]);
   const wsRef = useRef(null);
 
   useEffect(() => {
     const u = JSON.parse(localStorage.getItem('user') || '{}');
     setUser(u);
 
-    // Fetch data
     api.get('/user/me').then(res => setUser(res.data));
     api.get('/user/trades').then(res => setTrades(res.data.slice(0, 10)));
-    api.get('/notifications').then(res => setNotifications(res.data.filter(n => !n.read)));
 
-    // WebSocket for real-time price
     wsRef.current = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@ticker');
     wsRef.current.onmessage = (event) => {
       const data = JSON.parse(event.data);

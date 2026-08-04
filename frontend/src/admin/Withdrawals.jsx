@@ -25,7 +25,7 @@ export default function Withdrawals() {
   return (
     <>
       <Navbar />
-      <div className="p-4 md:p-6 max-w-4xl mx-auto">
+      <div className="p-4 max-w-4xl mx-auto">
         <h2 className="text-2xl font-bold text-primary mb-4">Pending Withdrawals</h2>
         {list.length === 0 ? <p className="text-gray-500">No pending requests</p> : (
           list.map(w => (
