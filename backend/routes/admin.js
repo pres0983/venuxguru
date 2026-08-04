@@ -34,3 +34,8 @@ router.get('/price/btc', async (req, res) => {
   const data = await response.json();
   res.json(data);
 });
+
+// ... all your route definitions (get, post, put, etc.) ...
+
+// At the very bottom of the file, add this line:
+export default router;
